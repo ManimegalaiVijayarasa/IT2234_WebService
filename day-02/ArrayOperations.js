@@ -1,5 +1,4 @@
 // 7. Array operation
-
 // push and pop
 
 console.log("------------- 7. Array operation---------------- ")
