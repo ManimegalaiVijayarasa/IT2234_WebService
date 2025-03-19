@@ -1,3 +1,4 @@
+
 let originalString= "4567-5-7893";
 
 if(originalString.length >0)
@@ -14,4 +15,5 @@ if(originalString.length >0)
 }
 else{
 	console.log("The string is empty");
+
 }
