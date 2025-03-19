@@ -1,4 +1,5 @@
 //2. finding the max number of an array using forEach loop
+
 console.log("--------2. Finding the max number of an array using forEach loop--------");
 
 let num= [1,2,3,4,5,6];
