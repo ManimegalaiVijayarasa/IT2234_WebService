@@ -1,3 +1,4 @@
+
 Output of printing "Hello World"
 ![Screenshot (332)](https://github.com/user-attachments/assets/fed83a9b-74c0-439f-96b9-b4e34785ccad)
 
@@ -12,3 +13,7 @@ output of printing left to right ande right to left using reverse
 
 output of printing odd numbers from 1 to 15
 ![Screenshot (336)](https://github.com/user-attachments/assets/95262814-17c2-40f7-bd09-4ebed86f6d57)
+
+Hello world output
+![Screenshot (327)](https://github.com/user-attachments/assets/87f1587f-5c08-4a2a-ab5e-0a804421bdfe)
+
