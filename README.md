@@ -1,3 +1,7 @@
+This Express.js server provides student data through multiple endpoints, allowing retrieval of all students, a specific student by registration number, and filtering by gender. It also includes basic greeting routes and listens on port 3001.
+outputs are :
+
+
 ![Screenshot (361)](https://github.com/user-attachments/assets/f0224877-f4bc-4b8c-9b54-669d46ad9f03)
 
 ![Screenshot (362)](https://github.com/user-attachments/assets/03f1b089-a89b-4725-9d16-267a1295d539)
