@@ -1,0 +1,155 @@
+use unidb;
+
+show databases;
+
+show collections;
+
+use local
+
+use unidb;
+ 
+ 
+ 
+// in mongodb
+
+{
+  "_id": {
+    "$oid": "6809c17fad132278e0bd1c6b"
+  },
+  "regno": "2021IT002",
+  "name": "Anne",
+  "age": 25,
+  "degree": "IT",
+  "gpa": 3.5,
+  "gender": "Female",
+  "skills": [
+    "JS",
+    "MongoDb",
+    "Node"
+  ]
+}
+
+
+
+
+{
+  "_id": {
+    "$oid": "6809c224ad132278e0bd1c6c"
+  },
+  "regno": "2021IT001",
+  "name": "Kolins",
+  "age": 25,
+  "degree": "IT",
+  "gpa": 3.2,
+  "gender": "Male",
+  "skills": [
+    "JS",
+    "MongoDb",
+    "Node"
+  ]
+}
+
+
+// in options find something   { type wanted things}
+
+{gender:"Female"}
+
+{name:1,age:1}
+
+{name:1,age:1,_id:0}
+
+{age:{$lte:25}}         // <=
+
+{age:{$gte:25}}			// >=
+
+{age:{$lt:25}}			// <
+
+{age:{$gt:25}}			// >
+
+{ skills:{$in:['MongoDb']}}
+
+{ skills:{$in:['JS','C#']}}
+
+{ skills:{$nin:['Java']}}
+
+
+
+
+// in shell
+
+db.students.insertOne(
+{
+  "regno": "2021IT003",
+  "name": "Bandara",
+  "age": 26,
+  "degree": "CSC",
+  "gpa": 3.3,
+  "gender": "Male",
+  "skills": [
+    "Java",
+    "MatLab",
+    "MySql"
+  ]
+}
+)
+
+
+
+db.students.insertMany(
+[
+	{
+  "regno": "2021IT004",
+  "name": "Kamal",
+  "age": 26,
+  "degree": "CSC",
+  "gpa": 3.5,
+  "gender": "Male",
+  "skills": [
+    "Java",
+    "MatLab",
+    "Phython"
+  ]
+	},
+	{
+  "regno": "2021IT005",
+  "name": "Maathavi",
+  "age": 25,
+  "degree": "IT",
+  "gpa": 3.3,
+  "gender": "Female",
+  "skills": [
+    "Java",
+	"PHP",
+	"JS",
+    "MatLab",
+    "MySql"
+  ]
+	}
+	
+]
+
+)
+
+
+
+db.students.find({"gender":"Female"})
+
+db.students.findOne({"gender":"Female"})
+
+db.students.find({'degree':'IT'}).sort({'gpa':1})
+
+db.students.find({'gender':'Female','degree':'IT'}).sort({'age':-1})
+
+
+
+db.students.updateOne(
+  { name: "Kolins" },
+  { $set: { degree: "CSC" } }
+);
+
+
+db.students.deleteMany({ degree: "CSC" });
+
+
+
+
