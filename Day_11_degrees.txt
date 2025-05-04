@@ -1,0 +1,121 @@
+create db=> sampledb
+		collection=>sample
+		
+		to delete database in shell=> db.dropDatabase()
+
+create db=> checkdb
+		collection=>sampledata	
+
+		to delete collection in shell=> db.sampledata.drop()
+		
+in unidb=> create collection=>degrees
+
+//add data
+
+{
+  "_id": {
+    "$oid": "680ee94ab6eca57c4ed6ea42"
+  },
+  "name": "BIT",
+  "duration": 3
+}
+
+{
+  "_id": {
+    "$oid": "680ee986b6eca57c4ed6ea43"
+  },
+  "name": "B.Sc in IT",
+  "duration": 4
+}
+
+
+
+{
+  "_id": {
+    "$oid": "680eeacbb6eca57c4ed6ea44"
+  },
+  "name": "B.Sc in Environmental Science",
+  "duration": 4
+}
+
+
+
+{
+  "_id": {
+    "$oid": "680eeaddb6eca57c4ed6ea45"
+  },
+  "name": "B.Sc in Environmental ScienceApplied Mathematics",
+  "duration": 3
+}
+
+
+
+{
+  "_id": {
+    "$oid": "680eeae9b6eca57c4ed6ea46"
+  },
+  "name": "B.Sc in Computer Science",
+  "duration": 4
+}
+
+
+
+// in shell
+
+use unidb
+
+db.degrees.deleteOne({_id:ObjectId('680ee94ab6eca57c4ed6ea42')})
+
+db.degrees.find().projection(['name'])
+
+db.degrees.find().projection([{'name':1},{'_id':-1}])
+
+db.degrees.find().projection(['name','duration'])
+
+db.degrees.find({},{name:1,_id:0}).pretty()
+
+db.degrees.deleteMany({duration:{$lt:4}})
+
+db.degrees.find({},{name:1,_id:0}).pretty()
+
+// after that refresh degrees and add data
+
+{
+  "_id": {
+    "$oid": "680eeffcb6eca57c4ed6ea48"
+  },
+  "name": "FGHIJG",
+  "duration": 1
+}
+
+//after that go to shell
+
+db.degrees.updateOne({_id:ObjectId('680eeffcb6eca57c4ed6ea48')},{$set:{name:'BIT',duration:3}})
+
+
+db.degrees.findOne({_id:ObjectId('680eeffcb6eca57c4ed6ea48')})
+
+db.degrees.updateMany({duration:{$gte:4}},{$inc:{duration:1}})
+
+db.degrees.find()
+
+db.students.updateOne({regno:'2021IT001'},{$push:{skills:'PHP'}})
+
+db.students.findOne({regno:'2021IT001'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
